@@ -1,0 +1,48 @@
+.login {
+  &__title {
+    color: #db9423;
+    font-family: 'Arizonia', Sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+
+  &__label {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', Sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  &__input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__error {
+    margin-top: 30px;
+    color: #ff0000;
+    font-family: 'Poppins', Sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
