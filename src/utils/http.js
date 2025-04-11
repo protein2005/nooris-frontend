@@ -27,6 +27,21 @@ export async function getMenu() {
   return resData.menuItems;
 }
 
+export async function getCategoriesItem(category) {
+  const response = await fetch(`http://localhost:8080/api/v1/menu/category/${category}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData.menuItems;
+}
+
 export async function updateMenuItem(reference, data) {
   const response = await fetch(`http://localhost:8080/api/v1/admin/menu/${reference}`, {
     method: 'PUT',

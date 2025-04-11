@@ -1,0 +1,31 @@
+.menu-categories {
+  padding-top: 30px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+  }
+
+  &__title {
+    color: #db9423;
+    font-family: 'Arizonia', Sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', Sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+}
