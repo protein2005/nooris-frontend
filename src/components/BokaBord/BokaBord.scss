@@ -1,0 +1,115 @@
+/* BokaBord.scss */
+
+.react-calendar {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Inter', sans-serif;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #2a2a2a !important;
+    }
+
+    &:disabled {
+      color: #555;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: lowercase;
+  color: #ccc;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.react-calendar__month-view__days {
+  // display: grid;
+  // grid-template-columns: repeat(7, 1fr);
+  // justify-items: center;
+  // gap: 0.5rem;
+}
+
+.react-calendar__tile {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.15rem;
+  font-weight: 500;
+  background-color: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+  color: #fff;
+
+  // Поточний день
+  &--now {
+    background-color: #fdbf61 !important;
+    color: #000 !important;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #e6a644 !important;
+      color: #000 !important;
+    }
+  }
+
+  // Активно обрана дата
+  &--active {
+    background-color: #555;
+    color: #fff;
+  }
+
+  // Недоступна дата
+  &.unavailable {
+    background-color: #5c2a2a;
+    color: #888;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  // Доступна дата
+  &.available {
+    background-color: #2f4f2f;
+    color: #cde8cd;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3b5e3b;
+      color: white;
+    }
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: #555;
+    pointer-events: none;
+  }
+}

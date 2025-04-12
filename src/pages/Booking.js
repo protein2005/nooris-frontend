@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroBookingSection from '../components/HeroBookingSection';
+import BokaBord from '../components/BokaBord';
 
 function Booking() {
   return (
@@ -29,6 +30,7 @@ function Booking() {
         <meta name="twitter:image" content="/preview.jpg" />
       </Helmet>
       <HeroBookingSection />
+      <BokaBord />
     </>
   );
 }
