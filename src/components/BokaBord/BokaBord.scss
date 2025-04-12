@@ -1,4 +1,269 @@
 /* BokaBord.scss */
+.bokabord {
+  &__wrapper {
+    display: grid;
+    padding-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+  }
+
+  &__color {
+    &--info {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--available {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #2f4f2f;
+    }
+    &--unavailable {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #3b3a3a;
+    }
+    &--today {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fdbf61;
+    }
+  }
+
+  &__title {
+    color: #db9423;
+    font-family: 'Arizonia', Sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', Sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  &__time {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    &--list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    &--item {
+      background-color: #2c2c2c;
+      color: #ffffff;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #3b3b3b;
+      }
+    }
+  }
+
+  &__step {
+    color: #db9423;
+    font-size: 20px;
+    font-family: 'Poppins', Sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__date {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__humans {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.summary {
+  &__title {
+    color: #db9423;
+    font-size: 20px;
+    font-family: 'Poppins', Sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.bokabord__form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bokabord__step,
+.bokabord__instruction {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.bokabord__summary {
+  margin-bottom: 1rem;
+
+  .summary__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .summary__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .summary__icon {
+      margin-right: 8px;
+      color: #555;
+    }
+
+    .summary__value {
+      margin-left: 4px;
+      font-weight: 500;
+    }
+  }
+}
+
+.form__group {
+  margin-bottom: 1.5rem;
+
+  &.form__checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  .form__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .form__input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #d9d9d9;
+  }
+}
+
+.PhoneInputInput {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #d9d9d9;
+}
+
+.form__button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #db9423;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid #db9423;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid #db9423;
+    color: #db9423;
+  }
+}
+
+.humans {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #3b3b3b;
+    }
+  }
+}
 
 .react-calendar {
   background-color: #1b1b1b;
@@ -10,12 +275,30 @@
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   font-family: 'Inter', sans-serif;
+  margin-bottom: 15px;
 }
 
 .react-calendar__navigation {
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__next2-button,
+  &__prev2-button {
+    display: none;
+    pointer-events: none;
+  }
 
   button {
     background-color: transparent;
@@ -30,6 +313,15 @@
 
     &:hover {
       background-color: #2a2a2a !important;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: #1b1b1b !important;
+    }
+
+    &:active {
+      background-color: transparent !important;
     }
 
     &:disabled {
@@ -49,16 +341,16 @@
 }
 
 .react-calendar__month-view__days {
-  // display: grid;
-  // grid-template-columns: repeat(7, 1fr);
-  // justify-items: center;
-  // gap: 0.5rem;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  justify-items: center;
+  row-gap: 0.5rem;
 }
 
 .react-calendar__tile {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  width: 2.5rem;
+  width: 3.5rem !important;
   height: auto;
   display: flex;
   align-items: center;
@@ -89,7 +381,7 @@
 
   // Недоступна дата
   &.unavailable {
-    background-color: #5c2a2a;
+    background-color: #3b3a3a;
     color: #888;
     pointer-events: none;
     cursor: not-allowed;
@@ -111,5 +403,21 @@
     background-color: transparent;
     color: #555;
     pointer-events: none;
+  }
+}
+
+.back-button {
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+  margin-bottom: 30px;
+
+  &:hover {
+    background-color: #3b3b3b;
   }
 }
