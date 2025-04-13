@@ -6,6 +6,7 @@ import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import './BokaBord.scss';
 import foto1 from '../../images/bokabordbg.jpg';
+import { getAvaliableTimes } from '../../utils/http';
 
 function BokaBord() {
   const [step, setStep] = useState(1);
@@ -13,15 +14,15 @@ function BokaBord() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [availableTimes, setAvailableTimes] = useState([]);
+  const [loadingTimes, setLoadingTimes] = useState(false);
+  const [noTimesMessage, setNoTimesMessage] = useState('');
   const [userDetails, setUserDetails] = useState({
     name: '',
     phone: '',
     email: '',
     acceptedTerms: false,
   });
-  const [dateUnavailable, setDateUnavailable] = useState(['2025-04-18', '2025-04-19']);
 
-  // Поточна дата
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -33,13 +34,27 @@ function BokaBord() {
   const handleDateSelect = (date) => {
     setSelectedDate(date);
     const dateString = date.toISOString().split('T')[0];
-
-    if (!dateUnavailable.includes(dateString)) {
-      setAvailableTimes(['12:00', '14:00', '16:00']);
-    } else {
-      setAvailableTimes([]);
-    }
     setStep(3);
+    setLoadingTimes(true);
+    setNoTimesMessage('');
+    setAvailableTimes([]);
+    getAvaliableTimes(dateString, peopleCount)
+      .then((data) => {
+        if (data.length > 0) {
+          setAvailableTimes(data);
+        } else {
+          setNoTimesMessage('Tyvärr finns det inga tillgängliga tider för detta datum.');
+        }
+      })
+      .catch((error) => {
+        setNoTimesMessage(
+          'Ett fel inträffade vid hämtning av tillgängliga tider. Försök igen senare.',
+        );
+        console.error('Error fetching available times:', error);
+      })
+      .finally(() => {
+        setLoadingTimes(false);
+      });
   };
 
   const handleTimeSelect = (time) => {
@@ -106,12 +121,11 @@ function BokaBord() {
                 tileClassName={({ date, view }) => {
                   if (view === 'month') {
                     const dateString = date.toISOString().split('T')[0];
-                    const today = new Date().toISOString().split('T')[0]; // Отримуємо поточну дату
-                    // Якщо дата в майбутньому і не входить в dateUnavailable, то вона доступна
-                    if (dateString < today || dateUnavailable.includes(dateString)) {
-                      return 'unavailable'; // Дні до сьогоднішнього дня або зі списку dateUnavailable будуть недоступними
+                    const today = new Date().toISOString().split('T')[0];
+                    if (dateString < today) {
+                      return 'unavailable';
                     }
-                    return 'available'; // Інші дні доступні
+                    return 'available';
                   }
                 }}
               />
@@ -130,22 +144,38 @@ function BokaBord() {
             </div>
           )}
 
-          {step === 3 && selectedDate && availableTimes.length > 0 && (
+          {step === 3 && selectedDate && (
             <div className="step">
               <p className="bokabord__step">Steg 3:</p>
               <p className="bokabord__time">
                 Vänligen välj tid för din bokning den {selectedDate.toLocaleDateString('sv-SE')}
               </p>
-              <div className="bokabord__time--list">
-                {availableTimes.map((time) => (
-                  <button
-                    key={time}
-                    className="bokabord__time--item"
-                    onClick={() => handleTimeSelect(time)}>
-                    {time}
-                  </button>
-                ))}
-              </div>
+
+              {loadingTimes && <p className="bokabord__loading">Laddar tillgängliga tider...</p>}
+
+              {noTimesMessage && !loadingTimes && (
+                <p className="bokabord__no-times">{noTimesMessage}</p>
+              )}
+
+              {!loadingTimes && availableTimes.length > 0 && (
+                <div className="bokabord__time--list">
+                  {availableTimes.map((time) => {
+                    const formattedTime = new Date(time).toLocaleTimeString('sv-SE', {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    });
+
+                    return (
+                      <button
+                        key={time}
+                        className="bokabord__time--item"
+                        onClick={() => handleTimeSelect(time)}>
+                        {formattedTime}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           )}
 
@@ -166,7 +196,13 @@ function BokaBord() {
                 </p>
                 <p className="summary__item">
                   <FaClock className="summary__icon" />
-                  Tid: <span className="summary__value">{selectedTime}</span>
+                  Tid:{' '}
+                  <span className="summary__value">
+                    {new Date(selectedTime).toLocaleTimeString('sv-SE', {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </span>
                 </p>
               </div>
 

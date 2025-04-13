@@ -85,3 +85,20 @@ export async function createMenuItem(data) {
   }
   return resData;
 }
+
+export async function getAvaliableTimes(date, quests) {
+  const response = await fetch(
+    `http://localhost:8080/api/v1/booking/available-times?date=${date}&guests=${quests}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData.timeSlots;
+}
