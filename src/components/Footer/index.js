@@ -1,12 +1,16 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <footer class="footer">
       <div class="footer__wrapper container">
         <div class="footer__column">
-          <h2 class="footer__title">Nooris</h2>
+          <h2 onClick={() => navigate('/admin')} class="footer__title">
+            Nooris
+          </h2>
           <p>
             Panelen ett självklart val för dig som sätter högt värde på noga utvalda råvaror, god
             mat och dryck med kött i fokus.

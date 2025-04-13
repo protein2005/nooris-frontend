@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
+import { useNavigate } from 'react-router-dom';
 
 function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section class="hero">
       <div class="hero__overlay">
@@ -14,7 +16,10 @@ function HeroSection() {
           />
           <h2 class="hero__title">VÄLKOMMEN TILL PANELEN LULEÅ</h2>
           <p class="hero__subtitle">Boka bord och njut av en fantastisk matupplevelse.</p>
-          <button class="hero__button" aria-label="Boka bord på Panelen Luleå">
+          <button
+            onClick={() => navigate('/bokabord')}
+            class="hero__button"
+            aria-label="Boka bord på Panelen Luleå">
             BOKA BORD
           </button>
         </div>

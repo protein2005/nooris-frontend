@@ -4,7 +4,8 @@ import AdminContainer from '../components/AdminContainer';
 import { Helmet } from 'react-helmet-async';
 import Cookies from 'js-cookie';
 import Login from '../components/Login';
-import AdminMenu from '../components/AdminMenu';
+// import AdminMenu from '../components/AdminMenu';
+import AdminBooking from '../components/AdminBooking';
 
 function AdminPanel() {
   const token = Cookies.get('token');
@@ -25,15 +26,9 @@ function AdminPanel() {
       <HeroAdminPanelSection />
       <AdminContainer>
         {token ? (
-          <div>
-            <AdminMenu />
-            <button
-              onClick={() => {
-                Cookies.remove('token');
-                window.location.href = '/admin';
-              }}>
-              delete token
-            </button>
+          <div className="admin__wrapper">
+            {/* <AdminMenu /> */}
+            <AdminBooking />
           </div>
         ) : (
           <Login />

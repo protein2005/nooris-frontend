@@ -19,7 +19,7 @@ function CategoryMenu() {
   const [categoryName, setCategoryName] = useState('');
 
   useEffect(() => {
-    const categoryData = menuCategories.find((item) => item.url === `/menu/${category}`);
+    const categoryData = menuCategories.find((item) => item.url === `/meny/${category}`);
     if (categoryData) {
       setCategoryName(categoryData.name);
       setIsLoading(true);
@@ -49,9 +49,9 @@ function CategoryMenu() {
       <HeroMenuSection category={categoryName} />
 
       <div className="menu-list shadow">
-        <button className="menu-list__back" onClick={() => navigate('/menu')}>
+        {/* <button className="menu-list__back" onClick={() => navigate('/meny')}>
           ← Tillbaka
-        </button>
+        </button> */}
         <div className="menu-list__wrapper container">
           <h2 className="menu-list__title">{categoryName}</h2>
           {isLoading && <Spinner />}

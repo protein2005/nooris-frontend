@@ -1,4 +1,12 @@
 .login {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__title {
     color: #db9423;
     font-family: 'Arizonia', Sans-serif;
@@ -35,6 +43,7 @@
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 30px;
+    background-color: #d9d9d9;
   }
 
   &__error {

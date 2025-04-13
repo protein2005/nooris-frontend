@@ -2,8 +2,10 @@ import React from 'react';
 
 import foto1 from '../../images/foto1.webp';
 import foto2 from '../../images/foto2.webp';
+import { useNavigate } from 'react-router-dom';
 
 function MenuSection() {
+  const navigate = useNavigate();
   return (
     <section class="menu shadow">
       <div class="menu__wrapper container">
@@ -19,7 +21,7 @@ function MenuSection() {
               bara den bästa maten, utan även en fantastisk service och helhetsupplevelse.
             </p>
           </div>
-          <button type="button" class="hero__button">
+          <button onClick={() => navigate('/meny')} type="button" class="hero__button">
             LÄS HELA MENYN
           </button>
         </div>

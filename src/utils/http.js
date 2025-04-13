@@ -123,3 +123,63 @@ export async function createBooking({ name, phoneNumber, email, guests, startTim
   }
   return resData;
 }
+
+export async function getBookings(token) {
+  const response = await fetch('http://localhost:8080/api/v1/admin/booking', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData.bookings;
+}
+
+export async function getBookingByReference(reference, token) {
+  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/${reference}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData;
+}
+
+export async function deleteBookingByReference(reference, token) {
+  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/${reference}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (!response.ok) {
+    const resData = await response.json();
+    throw new Error(resData.detail);
+  }
+  return true;
+}
+
+export async function getBookingByDate(date, token) {
+  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/by-date?date=${date}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData.bookings;
+}

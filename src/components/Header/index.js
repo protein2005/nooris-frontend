@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import logo from '../../images/logo.svg';
+import Cookies from 'js-cookie';
 
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -53,7 +54,7 @@ const Header = () => {
                 </li>
                 <li className="header__menu-item">
                   <NavLink
-                    to="/menu"
+                    to="/meny"
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -62,7 +63,7 @@ const Header = () => {
                 </li>
                 <li className="header__menu-item">
                   <NavLink
-                    to="/contact"
+                    to="/kontakt"
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -71,22 +72,34 @@ const Header = () => {
                 </li>
                 <li className="header__menu-item">
                   <NavLink
-                    to="/booking"
+                    to="/bokabord"
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
                     Boka Bord
                   </NavLink>
                 </li>
-                <li className="header__menu-item">
-                  <NavLink
-                    to="/admin"
-                    className={({ isActive }) =>
-                      isActive ? 'header__menu-link is-active' : 'header__menu-link'
-                    }>
-                    Admin Panel
-                  </NavLink>
-                </li>
+                {Cookies.get('token') && (
+                  <>
+                    <li className="header__menu-item">
+                      <NavLink
+                        to="/admin"
+                        className={({ isActive }) =>
+                          isActive ? 'header__menu-link is-active' : 'header__menu-link'
+                        }>
+                        Admin Panel
+                      </NavLink>
+                    </li>
+                    <li
+                      onClick={() => {
+                        Cookies.remove('token');
+                        window.location.href = '/admin';
+                      }}
+                      className="header__menu-item">
+                      <NavLink className="header__menu-link">Logga ut</NavLink>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
           </div>

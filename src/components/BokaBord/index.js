@@ -10,6 +10,7 @@ import foto1 from '../../images/bokabordbg.jpg';
 import { getAvaliableTimes } from '../../utils/http';
 import { createBooking } from '../../utils/http';
 import Spinner from '../Spinner';
+import { formatDateToLocalISO } from '../../utils/formatDateToLocal';
 
 function BokaBord() {
   const [step, setStep] = useState(1);
@@ -35,12 +36,6 @@ function BokaBord() {
   const handlePeopleCountSelect = (count) => {
     setPeopleCount(count);
     setStep(2);
-  };
-
-  const formatDateToLocalISO = (date) => {
-    const offset = date.getTimezoneOffset();
-    const localDate = new Date(date.getTime() - offset * 60 * 1000);
-    return localDate.toISOString().split('T')[0];
   };
 
   const handleDateSelect = (date) => {
