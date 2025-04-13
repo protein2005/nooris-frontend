@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { FaUsers, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaSpinner } from 'react-icons/fa';
 import 'react-calendar/dist/Calendar.css';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import './BokaBord.scss';
 import foto1 from '../../images/bokabordbg.jpg';
 import { getAvaliableTimes } from '../../utils/http';
+import { createBooking } from '../../utils/http';
+import Spinner from '../Spinner';
 
 function BokaBord() {
   const [step, setStep] = useState(1);
@@ -22,6 +25,9 @@ function BokaBord() {
     email: '',
     acceptedTerms: false,
   });
+  const [bookingSuccess, setBookingSuccess] = useState(null);
+  const [bookingError, setBookingError] = useState('');
+  const [bookingLoading, setBookingLoading] = useState(false);
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -31,13 +37,20 @@ function BokaBord() {
     setStep(2);
   };
 
+  const formatDateToLocalISO = (date) => {
+    const offset = date.getTimezoneOffset();
+    const localDate = new Date(date.getTime() - offset * 60 * 1000);
+    return localDate.toISOString().split('T')[0];
+  };
+
   const handleDateSelect = (date) => {
     setSelectedDate(date);
-    const dateString = date.toISOString().split('T')[0];
+    const dateString = formatDateToLocalISO(date);
     setStep(3);
     setLoadingTimes(true);
     setNoTimesMessage('');
     setAvailableTimes([]);
+
     getAvaliableTimes(dateString, peopleCount)
       .then((data) => {
         if (data.length > 0) {
@@ -62,9 +75,31 @@ function BokaBord() {
     setStep(4);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Бронювання підтверджено:', { userDetails, selectedDate, peopleCount });
+    setStep(5);
+    setBookingLoading(true);
+    setBookingError('');
+    setBookingSuccess(null);
+
+    try {
+      const response = await createBooking({
+        name: userDetails.name,
+        phoneNumber: userDetails.phone,
+        email: userDetails.email,
+        guests: peopleCount,
+        startTime: selectedTime,
+      });
+
+      console.log('Bokning lyckades:', response);
+
+      setBookingSuccess('Bokningen har skickats! Vi återkommer med en bekräftelse.');
+    } catch (error) {
+      console.error('Fel vid bokning:', error.message);
+      setBookingError('Något gick fel. Försök igen eller kontakta restaurangen.');
+    } finally {
+      setBookingLoading(false);
+    }
   };
 
   const handleBack = () => {
@@ -85,7 +120,7 @@ function BokaBord() {
           <img src={foto1} width="500" alt="Boka Bord" className="bokabord__img" />
         </div>
         <div className="bokabord__content">
-          {step > 1 && (
+          {step > 1 && step !== 5 && (
             <button onClick={handleBack} className="back-button">
               ← Steg tillbaka
             </button>
@@ -96,7 +131,7 @@ function BokaBord() {
               <p className="bokabord__step">Steg 1:</p>
               <p className="bokabord__humans">Hur många personer ska boka bord?</p>
               <div className="humans__list">
-                {[2, 3, 4, 5, 6].map((count) => (
+                {[1, 2, 3, 4, 5, 6].map((count) => (
                   <button
                     key={count}
                     onClick={() => handlePeopleCountSelect(count)}
@@ -120,9 +155,10 @@ function BokaBord() {
                 locale="sv-SE"
                 tileClassName={({ date, view }) => {
                   if (view === 'month') {
-                    const dateString = date.toISOString().split('T')[0];
-                    const today = new Date().toISOString().split('T')[0];
-                    if (dateString < today) {
+                    const dateString = formatDateToLocalISO(date);
+                    const todayString = formatDateToLocalISO(new Date());
+
+                    if (dateString < todayString) {
                       return 'unavailable';
                     }
                     return 'available';
@@ -151,7 +187,7 @@ function BokaBord() {
                 Vänligen välj tid för din bokning den {selectedDate.toLocaleDateString('sv-SE')}
               </p>
 
-              {loadingTimes && <p className="bokabord__loading">Laddar tillgängliga tider...</p>}
+              {loadingTimes && <Spinner />}
 
               {noTimesMessage && !loadingTimes && (
                 <p className="bokabord__no-times">{noTimesMessage}</p>
@@ -258,6 +294,26 @@ function BokaBord() {
                 Bekräfta bokning
               </button>
             </form>
+          )}
+
+          {step === 5 && (
+            <div className="step">
+              {bookingLoading && <Spinner />}
+
+              {bookingSuccess && (
+                <div className="message__wrapper">
+                  <FaCheckCircle className="success-icon" />
+                  <p className="success-message">{bookingSuccess}</p>
+                </div>
+              )}
+
+              {bookingError && (
+                <div className="message__wrapper">
+                  <FaTimesCircle className="error-icon" />
+                  <p className="error-message">{bookingError}</p>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>

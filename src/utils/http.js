@@ -102,3 +102,24 @@ export async function getAvaliableTimes(date, quests) {
   }
   return resData.timeSlots;
 }
+
+export async function createBooking({ name, phoneNumber, email, guests, startTime }) {
+  const response = await fetch('http://localhost:8080/api/v1/booking', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      phoneNumber,
+      email,
+      guests,
+      startTime,
+    }),
+  });
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error(resData.detail);
+  }
+  return resData;
+}
