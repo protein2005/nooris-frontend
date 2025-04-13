@@ -14,7 +14,8 @@ function HeroSection() {
             class="hero__logo"
             loading="lazy"
           />
-          <h2 class="hero__title">VÄLKOMMEN TILL PANELEN LULEÅ</h2>
+          <h2 class="hero__title">VÄLKOMMEN TILL NOORIS KÖK & BAR</h2>
+
           <p class="hero__subtitle">Boka bord och njut av en fantastisk matupplevelse.</p>
           <button
             onClick={() => navigate('/bokabord')}

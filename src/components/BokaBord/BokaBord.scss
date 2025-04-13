@@ -1,10 +1,16 @@
 /* BokaBord.scss */
+@use '../../styles/helpers/' as *;
+
 .bokabord {
   &__wrapper {
     display: grid;
     padding-top: 30px;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__header {
@@ -20,6 +26,10 @@
 
   &__image {
     margin: 0 auto;
+  }
+
+  &__img {
+    width: 100%;
   }
 
   &__color {
@@ -99,6 +109,12 @@
       cursor: pointer;
       border: none;
       transition: background-color 0.2s ease;
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+      }
 
       &:hover {
         background-color: #3b3b3b;
@@ -264,6 +280,12 @@
     border: none;
     transition: background-color 0.2s ease;
 
+    @include mobile {
+      width: 40px;
+      height: 40px;
+      font-size: 0.8rem;
+    }
+
     &:hover {
       background-color: #3b3b3b;
     }
@@ -365,6 +387,14 @@
   background-color: transparent;
   transition: background 0.2s ease, color 0.2s ease;
   color: #fff;
+
+  @include mobile {
+    width: 3.5rem !important;
+  }
+
+  @include mobile-s {
+    width: 2.5rem !important;
+  }
 
   // Поточний день
   &--now {

@@ -81,6 +81,14 @@ body {
     font-size: 8em;
     font-weight: 700;
     letter-spacing: 12px;
+
+    @include mobile {
+      font-size: 4em;
+    }
+
+    @include mobile-s {
+      font-size: 3em;
+    }
   }
 }
 
@@ -97,6 +105,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__map {
@@ -299,8 +311,12 @@ body {
     align-items: center;
     gap: 20px;
 
+    @include mobile {
+      gap: 50px;
+    }
+
     @include laptop {
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
     }
   }
@@ -309,16 +325,17 @@ body {
     justify-content: space-between;
     gap: 20px;
 
-    &__image {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 10px;
-      margin-right: 20px;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
 
-      &:last-child {
-        margin-right: 0;
-      }
+  &__image {
+    @include mobile {
+      width: 90%;
+      height: auto;
     }
   }
   &__content {
@@ -405,6 +422,10 @@ body {
     font-size: 120px;
     font-weight: 500;
     letter-spacing: -1.3px;
+
+    @include mobile {
+      font-size: 80px;
+    }
   }
 
   &__subtitle {
@@ -500,14 +521,30 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 
   &__image {
     margin-right: 10px;
     width: 320px;
 
+    @include mobile {
+      width: 90%;
+      height: auto;
+    }
+
     &--2 {
       height: 215px;
+
+      @include mobile {
+        width: 90%;
+        height: auto;
+      }
     }
 
     &:last-child {
@@ -532,6 +569,12 @@ body {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 200px;
+    }
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 50px;
     }
   }
 

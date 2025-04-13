@@ -29,16 +29,16 @@ function AboutUsSection() {
           <p class="about-us__subtitle">Information</p>
           <div class="about-us__description">
             <p class="fw-600">
-              Välkommen till Panelen Luleå, en fantastisk restaurang med steakhouse-koncept och en
-              grym cocktailbar. i Restaurangen är belägen på Storgatan 43
+              Välkommen till Nooris kök & bar Luleå, en fantastisk restaurang med steakhouse-koncept
+              och en grym cocktailbar. Restaurangen är belägen på Storgatan 46F, 972 31 Luleå
             </p>
             <p>
-              Panelen ett självklart val för dig som sätter högt värde på noga utvalda råvaror, god
-              mat och dryck med kött i fokus.
+              Nooris är ett självklart val för dig som sätter högt värde på noga utvalda råvaror,
+              god mat och dryck med kött i fokus.
             </p>
             <p>
               Precis som i köket kommer vi ha grymma bartenders som har koll på hur man blandar
-              lyxiga cocktails alltså en kombination som är svårslaget.
+              lyxiga cocktails – alltså en kombination som är svårslagen.
             </p>
           </div>
         </div>

@@ -11,10 +11,10 @@ function SupportSection() {
           <i
             className="fas fa-mobile-screen"
             style={{ fontSize: '42px', marginBottom: '10px' }}></i>
-          <a class="support__phone" href="tel:092033030">
-            0920 – 330 30
+          <a class="support__phone" href="tel:+46920270444">
+            +46920270444
           </a>
-          <p class="support__address">Storgatan 43 972 31 Luleå</p>
+          <p class="support__address">Storgatan 46F 972 31 Luleå</p>
         </div>
         <div class="support__calendar">
           <h3 class="calendar__title">Öppettider</h3>

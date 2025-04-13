@@ -1,3 +1,5 @@
+@use '../styles/helpers/' as *;
+
 .menu-list {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,10 @@
   &__wrapper {
     // width: 100%;
     width: 800px;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__title {

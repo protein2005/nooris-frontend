@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { menuCategories } from '../../utils/menuCategories';
 
 function Footer() {
   const navigate = useNavigate();
@@ -12,13 +13,14 @@ function Footer() {
             Nooris
           </h2>
           <p>
-            Panelen ett självklart val för dig som sätter högt värde på noga utvalda råvaror, god
+            Nooris är ett självklart val för dig som sätter högt värde på noga utvalda råvaror, god
             mat och dryck med kött i fokus.
           </p>
           <p>
             Precis som i köket kommer vi ha grymma bartenders som har koll på hur man blandar lyxiga
-            cocktails alltså en kombination som är svårslaget.
+            cocktails – alltså en kombination som är svårslagen.
           </p>
+
           <img src={logo} alt="Panelen Steakhouse Logo" class="footer__logo" />
         </div>
 
@@ -56,29 +58,28 @@ function Footer() {
         <div class="footer__column">
           <h2 class="footer__title">Meny</h2>
           <ul class="footer__list">
-            <li>First Round</li>
-            <li>2 Share Or not 2 Share</li>
-            <li>Second Round</li>
-            <li>Kött För Två</li>
-            <li>Final Round</li>
-            <li>Wine</li>
+            {menuCategories.map((category) => (
+              <li key={category.id}>
+                <Link to={`${category.url}`}>{category.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div class="footer__column">
           <h2 class="footer__title">Kontakt</h2>
           <p>
-            Storgatan 43
+            Storgatan 46F
             <br />
             972 31 <strong>Luleå</strong>
           </p>
           <p>
-            <a href="tel:092033030" class="footer__phone">
-              0920 – 330 30
+            <a href="tel:+46920270444" class="footer__phone">
+              +46920270444
             </a>
             <br />
-            <a href="mailto:lulea@panelen.nu" class="footer__email">
-              lulea@panelen.nu
+            <a href="mailto:lulea@nooris.nu" class="footer__email">
+              lulea@nooris.nu
             </a>
           </p>
         </div>

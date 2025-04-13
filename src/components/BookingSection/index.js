@@ -17,7 +17,7 @@ function BookingSection() {
           </button>
           <p class="booking__description">Vi hjälper med er bokning, ring oss på</p>
           <address class="booking__address">
-            <a href="tel:+4692033030">0920 – 330 30</a>
+            <a href="tel:+46920270444">+46 920 27 04 44</a>
           </address>
         </div>
       </div>

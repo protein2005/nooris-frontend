@@ -14,7 +14,7 @@ function MenuList() {
       </div>
       <div className="menu-categories__wrapper container">
         {menuCategories.map((category) => (
-          <LinkMenu key={category.key} category={category} />
+          <LinkMenu key={category.key} id={category.key} category={category} />
         ))}
       </div>
     </div>
