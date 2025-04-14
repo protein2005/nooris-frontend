@@ -13,6 +13,7 @@ function CategoryMenu() {
   const { category } = useParams();
   const [menuItems, setMenuItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [categoryId, setCategoryId] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ function CategoryMenu() {
     const categoryData = menuCategories.find((item) => item.url === `/meny/${category}`);
     if (categoryData) {
       setCategoryName(categoryData.name);
+      setCategoryId(categoryData.key);
       setIsLoading(true);
       getCategoriesItem(categoryData.key)
         .then((data) => {
@@ -46,7 +48,7 @@ function CategoryMenu() {
         <title>{categoryName} | Nooris kök & bar</title>
         <meta name="description" content={`Utforska vår ${category} meny.`} />
       </Helmet>
-      <HeroMenuSection category={categoryName} />
+      <HeroMenuSection category={categoryName} id={categoryId} />
 
       <div className="menu-list shadow">
         {/* <button className="menu-list__back" onClick={() => navigate('/meny')}>
