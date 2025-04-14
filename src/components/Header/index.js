@@ -14,6 +14,17 @@ const Header = () => {
     document.documentElement.classList.toggle('is-lock');
   };
 
+  const closeMenu = () => {
+    setIsMenuActive(false);
+    document.documentElement.classList.remove('is-lock');
+  };
+
+  const handleLinkClick = () => {
+    if (window.innerWidth <= 768) {
+      closeMenu();
+    }
+  };
+
   useEffect(() => {
     const burgerBtn = burgerButtonRef.current;
     const overlay = overlayRef.current;
@@ -46,6 +57,7 @@ const Header = () => {
                 <li className="header__menu-item">
                   <NavLink
                     to="/"
+                    onClick={handleLinkClick}
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -55,6 +67,7 @@ const Header = () => {
                 <li className="header__menu-item">
                   <NavLink
                     to="/meny"
+                    onClick={handleLinkClick}
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -64,6 +77,7 @@ const Header = () => {
                 <li className="header__menu-item">
                   <NavLink
                     to="/kontakt"
+                    onClick={handleLinkClick}
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -73,6 +87,7 @@ const Header = () => {
                 <li className="header__menu-item">
                   <NavLink
                     to="/bokabord"
+                    onClick={handleLinkClick}
                     className={({ isActive }) =>
                       isActive ? 'header__menu-link is-active' : 'header__menu-link'
                     }>
@@ -84,6 +99,7 @@ const Header = () => {
                     <li className="header__menu-item">
                       <NavLink
                         to="/admin"
+                        onClick={handleLinkClick}
                         className={({ isActive }) =>
                           isActive ? 'header__menu-link is-active' : 'header__menu-link'
                         }>
@@ -94,6 +110,7 @@ const Header = () => {
                       onClick={() => {
                         Cookies.remove('token');
                         window.location.href = '/admin';
+                        handleLinkClick();
                       }}
                       className="header__menu-item">
                       <NavLink className="header__menu-link">Logga ut</NavLink>
