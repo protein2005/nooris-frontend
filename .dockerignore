@@ -1,5 +1,12 @@
+# git folder
+.git
+
 # env files
 .env
+
+# temporary files
+*.log
+*.tmp
 
 # dependencies
 /node_modules

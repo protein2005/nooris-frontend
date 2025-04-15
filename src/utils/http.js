@@ -1,5 +1,7 @@
+import {BACKEND_PORT, HTTP_PROTOCOL, IP} from "./constraints";
+
 export async function login(data) {
-  const response = await fetch(`http://localhost:8080/api/v1/auth/login`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +16,7 @@ export async function login(data) {
 }
 
 export async function getMenu() {
-  const response = await fetch('http://localhost:8080/api/v1/menu', {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/menu`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +30,7 @@ export async function getMenu() {
 }
 
 export async function getCategoriesItem(category) {
-  const response = await fetch(`http://localhost:8080/api/v1/menu/category/${category}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/menu/category/${category}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -43,7 +45,7 @@ export async function getCategoriesItem(category) {
 }
 
 export async function updateMenuItem(reference, data) {
-  const response = await fetch(`http://localhost:8080/api/v1/admin/menu/${reference}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/menu/${reference}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ export async function updateMenuItem(reference, data) {
 }
 
 export async function deleteMenuItem(reference) {
-  const response = await fetch(`http://localhost:8080/api/v1/admin/menu/${reference}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/menu/${reference}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +74,7 @@ export async function deleteMenuItem(reference) {
 }
 
 export async function createMenuItem(data) {
-  const response = await fetch('http://localhost:8080/api/v1/admin/menu', {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/menu`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -88,7 +90,7 @@ export async function createMenuItem(data) {
 
 export async function getAvaliableTimes(date, quests) {
   const response = await fetch(
-    `http://localhost:8080/api/v1/booking/available-times?date=${date}&guests=${quests}`,
+    `${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/booking/available-times?date=${date}&guests=${quests}`,
     {
       method: 'GET',
       headers: {
@@ -104,7 +106,7 @@ export async function getAvaliableTimes(date, quests) {
 }
 
 export async function createBooking({ name, phoneNumber, email, guests, startTime }) {
-  const response = await fetch('http://localhost:8080/api/v1/booking', {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/booking`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -125,7 +127,7 @@ export async function createBooking({ name, phoneNumber, email, guests, startTim
 }
 
 export async function getBookings(token) {
-  const response = await fetch('http://localhost:8080/api/v1/admin/booking', {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/booking`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -140,7 +142,7 @@ export async function getBookings(token) {
 }
 
 export async function getBookingByReference(reference, token) {
-  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/${reference}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/booking/${reference}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -155,7 +157,7 @@ export async function getBookingByReference(reference, token) {
 }
 
 export async function deleteBookingByReference(reference, token) {
-  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/${reference}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/booking/${reference}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -170,7 +172,7 @@ export async function deleteBookingByReference(reference, token) {
 }
 
 export async function getBookingByDate(date, token) {
-  const response = await fetch(`http://localhost:8080/api/v1/admin/booking/by-date?date=${date}`, {
+  const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/booking/by-date?date=${date}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
