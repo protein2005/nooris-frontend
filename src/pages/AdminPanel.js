@@ -16,12 +16,6 @@ function AdminPanel() {
         <title>Admin Panel</title>
         <meta name="description" content="Admin panel for managing the restaurant." />
         <link rel="canonical" href="/admin" />
-        <meta property="og:title" content="Admin Panel" />
-        <meta property="og:description" content="Admin panel for managing the restaurant." />
-        <meta property="og:url" content="/admin" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/path/to/image.jpg" />
-        <meta property="og:image:alt" content="Admin Panel Image" />
       </Helmet>
       <HeroAdminPanelSection />
       <AdminContainer>
