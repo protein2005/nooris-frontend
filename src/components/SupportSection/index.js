@@ -6,15 +6,15 @@ function SupportSection() {
       <h2 class="support__slogan">Hur kan vi hjälpa dig?</h2>
       <div class="support__wrapper container">
         <div class="support__kontakt">
-          <h3 class="support__title">Hitta hit</h3>
-          <p class="support__subtitle">Uppgifter</p>
+          <h3 class="support__title">Har du frågor?</h3>
+          <p class="support__subtitle">Hör gärna av dig!</p>
           <i
             className="fas fa-mobile-screen"
             style={{ fontSize: '42px', marginBottom: '10px' }}></i>
           <a class="support__phone" href="tel:+46920270444">
             +46920270444
           </a>
-          <p class="support__address">Storgatan 46F 972 31 Luleå</p>
+          <p class="support__address">Storgatan 46F, 972 31 Luleå</p>
         </div>
         <div class="support__calendar">
           <h3 class="calendar__title">Öppettider</h3>
@@ -22,30 +22,15 @@ function SupportSection() {
           <div class="calendar__wrapper">
             <div class="calendar__date">
               <p>
-                <strong>Måndag</strong>
+                <strong>Måndag – Lördag</strong>
               </p>
-              <p>11.00-14.00</p>
+              <p>11:00-22:00</p>
             </div>
             <div class="calendar__date">
               <p>
-                <strong>Tisdag – Torsdag</strong>
+                <strong>Söndag</strong>
               </p>
-              <p>11.00-14.00</p>
-              <p>16:00-22:00</p>
-            </div>
-            <div class="calendar__date">
-              <p>
-                <strong>Fredag</strong>
-              </p>
-              <p>11.00-14.00</p>
-              <p>16:00-23:00</p>
-            </div>
-            <div class="calendar__date">
-              <p>
-                <strong>Lördag</strong>
-              </p>
-              <p>12:00-14.30</p>
-              <p>16:00-23:00</p>
+              <p>Stängd</p>
             </div>
           </div>
           <p class="calendar__note">Köket stänger en timme före stängningstid.</p>

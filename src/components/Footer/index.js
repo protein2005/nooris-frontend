@@ -27,30 +27,14 @@ function Footer() {
         <div class="footer__column">
           <h2 class="footer__title">Öppettider</h2>
           <p>
-            <strong>Måndag</strong>
+            <strong>Måndag – Lördag</strong>
             <br />
-            11.00-14.00
+            11.00-22.00
           </p>
           <p>
-            <strong>Tisdag – Torsdag</strong>
+            <strong>Söndag</strong>
             <br />
-            11.00-14.00
-            <br />
-            16:00-22:00
-          </p>
-          <p>
-            <strong>Fredag</strong>
-            <br />
-            11.00-14.00
-            <br />
-            16:00-23:00
-          </p>
-          <p>
-            <strong>Lördag</strong>
-            <br />
-            12:00-14.30
-            <br />
-            16:00-23:00
+            stängd
           </p>
           <p class="footer__note">Köket stänger en timme före stängningstid.</p>
         </div>
@@ -76,10 +60,6 @@ function Footer() {
           <p>
             <a href="tel:+46920270444" class="footer__phone">
               +46920270444
-            </a>
-            <br />
-            <a href="mailto:lulea@nooris.nu" class="footer__email">
-              lulea@nooris.nu
             </a>
           </p>
         </div>

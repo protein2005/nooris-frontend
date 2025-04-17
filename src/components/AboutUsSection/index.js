@@ -1,6 +1,7 @@
 import React from 'react';
 
-import foto1 from '../../images/heroImage.webp';
+import information1 from '../../images/information1.png';
+import information2 from '../../images/information2.png';
 
 function AboutUsSection() {
   return (
@@ -8,7 +9,7 @@ function AboutUsSection() {
       <div class="about-us__wrapper container">
         <div class="about-us__images">
           <img
-            src={foto1}
+            src={information1}
             alt="Panelen Steakhouse Luleå interiör"
             class="about-us__image about-us__image--1"
             width="323"
@@ -16,7 +17,7 @@ function AboutUsSection() {
             loading="lazy"
           />
           <img
-            src={foto1}
+            src={information2}
             alt="Panelen Steakhouse Luleå mat"
             class="about-us__image about-us__image--2"
             width="323"
