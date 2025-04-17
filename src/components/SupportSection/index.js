@@ -12,7 +12,7 @@ function SupportSection() {
             className="fas fa-mobile-screen"
             style={{ fontSize: '42px', marginBottom: '10px' }}></i>
           <a class="support__phone" href="tel:+46920270444">
-            +46920270444
+            +46 920 27 04 44
           </a>
           <p class="support__address">Storgatan 46F, 972 31 Luleå</p>
         </div>

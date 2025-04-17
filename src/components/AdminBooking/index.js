@@ -1,14 +1,13 @@
 import React from 'react';
 import './AdminBooking.scss';
-import { getBookings } from '../../utils/http';
 import { getBookingByDate } from '../../utils/http';
-import { getBookingByReference } from '../../utils/http';
 import { deleteBookingByReference } from '../../utils/http';
 import Cookies from 'js-cookie';
 import Calendar from 'react-calendar';
 import Spinner from '../Spinner';
 import { formatDateToLocalISO } from '../../utils/formatDateToLocal';
-import { FaTrashAlt, FaPhoneAlt, FaEnvelope, FaUsers, FaCalendarAlt } from 'react-icons/fa'; // Іконки для різних полів
+import { FaTrashAlt, FaPhoneAlt, FaEnvelope, FaUsers, FaCalendarAlt } from 'react-icons/fa';
+import AdminFormBokaBord from '../AdminFormBokaBord';
 
 function AdminBooking() {
   const token = Cookies.get('token');
@@ -70,7 +69,10 @@ function AdminBooking() {
           ) : error ? (
             <p className="error">{error}</p>
           ) : bookings.length === 0 ? (
-            <p className="no-bookings">Inga bokningar för det valda datumet.</p>
+            <>
+              <p className="no-bookings">Inga bokningar för det valda datumet.</p>
+              <AdminFormBokaBord selectedDate={selectedDate} />
+            </>
           ) : (
             <div>
               <h2 className="admin-bokabord__date">
@@ -115,6 +117,7 @@ function AdminBooking() {
                   </li>
                 ))}
               </ul>
+              <AdminFormBokaBord setBookings={setBookings} selectedDate={selectedDate} />
             </div>
           )}
         </>

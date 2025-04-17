@@ -59,7 +59,7 @@ function Footer() {
           </p>
           <p>
             <a href="tel:+46920270444" class="footer__phone">
-              +46920270444
+              +46 920 27 04 44
             </a>
           </p>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { FaUsers, FaCalendarAlt, FaClock } from 'react-icons/fa';
-import { FaCheckCircle, FaTimesCircle, FaSpinner } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import 'react-calendar/dist/Calendar.css';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
@@ -135,6 +135,12 @@ function BokaBord() {
                   </button>
                 ))}
               </div>
+              <p className="bokabord__humans">
+                Om du vill boka för fler än 6 personer, ring numret{' '}
+                <a href="tel:+46920270444" class="footer__phone">
+                  +46 920 27 04 44
+                </a>{' '}
+              </p>
             </div>
           )}
 
@@ -260,13 +266,12 @@ function BokaBord() {
               </div>
 
               <div className="form__group">
-                <label className="form__label">E-post:</label>
+                <label className="form__label">E-post (inte nödvändigtvis):</label>
                 <input
                   type="email"
                   className="form__input"
                   value={userDetails.email}
                   onChange={(e) => setUserDetails({ ...userDetails, email: e.target.value })}
-                  required
                 />
               </div>
 

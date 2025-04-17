@@ -31,13 +31,17 @@
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 30px;
+
+    @include mobile {
+      letter-spacing: 1px;
+    }
   }
 
   &__description {
     text-align: center;
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
-    font-size: 13px;
+    // font-family: 'Poppins', Sans-serif;
+    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;

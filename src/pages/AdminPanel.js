@@ -4,7 +4,7 @@ import AdminContainer from '../components/AdminContainer';
 import { Helmet } from 'react-helmet-async';
 import Cookies from 'js-cookie';
 import Login from '../components/Login';
-// import AdminMenu from '../components/AdminMenu';
+import AdminMenu from '../components/AdminMenu';
 import AdminBooking from '../components/AdminBooking';
 
 function AdminPanel() {
@@ -27,8 +27,8 @@ function AdminPanel() {
       <AdminContainer>
         {token ? (
           <div className="admin__wrapper">
-            {/* <AdminMenu /> */}
             <AdminBooking />
+            <AdminMenu />
           </div>
         ) : (
           <Login />

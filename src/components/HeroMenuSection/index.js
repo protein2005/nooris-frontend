@@ -2,12 +2,12 @@ import React from 'react';
 
 import MENY from '../../images/menybg.jpg';
 import STARTERS from '../../images/Förrätter.jpg';
-import MEAT from '../../images/Kött.avif';
+import MEAT from '../../images/Kött.jpg';
 import PASTA from '../../images/Pasta.jpg';
 import SMASH_BURGER from '../../images/SmashBurger.jpg';
 import FISH from '../../images/Fisk.jpg';
 import KEBAB from '../../images/Kebab.jpg';
-import SALAD from '../../images/Sallad.avif';
+import SALAD from '../../images/Sallad.jpg';
 import PIZZA from '../..//images/Pizza.jpg';
 import CHILD_MENU from '../../images/Barnmeny.jpg';
 import DESSERT from '../../images/desserter.jpg';

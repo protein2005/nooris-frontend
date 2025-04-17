@@ -148,16 +148,25 @@ body {
     font-size: 4em;
     font-weight: 700;
     letter-spacing: 2px;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
 
   &__subtitle {
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 8.5px;
     margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 
   &__phone {
@@ -179,12 +188,17 @@ body {
   &__subtitle {
     text-align: center;
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
+    // font-family: 'Poppins', Sans-serif;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 8.5px;
     margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 
   &__wrapper {
@@ -203,20 +217,33 @@ body {
   }
 }
 
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('../images/heroImage.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url('../images/heroImage.webp') center/cover no-repeat;
 
   &__kontakt {
     position: relative;
     width: 100%;
     height: 60vh;
     background-position: 50% 40%;
+    background: url('../images/heroImage.webp') center/cover no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -224,7 +251,7 @@ body {
   }
 
   @include tablet {
-    height: 50vh;
+    height: 80vh;
   }
 
   &__overlay {
@@ -263,12 +290,21 @@ body {
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 10px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 
   &__subtitle {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 300;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__button {
@@ -352,12 +388,17 @@ body {
   &__subtitle {
     text-align: center;
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
+    // font-family: 'Poppins', Sans-serif;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 8.5px;
     margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 
   &__description {
@@ -405,6 +446,10 @@ body {
   justify-content: center;
   position: relative;
 
+  @include mobile {
+    height: 600px;
+  }
+
   &__overlay {
     position: absolute;
     width: 100%;
@@ -423,19 +468,24 @@ body {
     letter-spacing: -1.3px;
 
     @include mobile {
-      font-size: 80px;
+      font-size: 70px;
     }
   }
 
   &__subtitle {
     text-align: center;
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
+    // font-family: 'Poppins', Sans-serif;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 8.5px;
     margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
   }
 
   &__description {
@@ -483,12 +533,17 @@ body {
   &__subtitle {
     text-align: center;
     color: #ffffff;
-    font-family: 'Poppins', Sans-serif;
+    // font-family: 'Poppins', Sans-serif;
     font-size: 17px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 8.5px;
     margin-bottom: 50px;
+
+    @include mobile {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
   }
 
   &__content {
