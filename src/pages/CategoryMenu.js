@@ -214,7 +214,7 @@ function CategoryMenu() {
                       {item.variants.length === 1 && !item.variants[0].label ? (
                         <div className="menu-list__row">
                           <h2 className="menu-list__name">{item.name}</h2>
-                          <span className="menu-list__price">{item.variants[0].price} kr</span>
+                          <span className="menu-list__price">{item.variants[0].price} :-</span>
                         </div>
                       ) : (
                         <>
