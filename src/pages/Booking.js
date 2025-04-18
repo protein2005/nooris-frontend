@@ -8,9 +8,15 @@ function Booking() {
     <>
       <Helmet>
         <title>Boka Bord | Nooris kök & bar</title>
-        <meta name="description" content="Boka bord online enkelt och snabbt på vår restaurang." />
-        <meta name="keywords" content="bokning, boka bord, restaurang, onlinebokning" />
-        <meta name="language" content="sv" />
+        <meta
+          name="description"
+          content="Boka bord online enkelt och snabbt på Nooris kök & bar. Välj antal gäster, datum och tid för din bokning, fyll i dina kontaktuppgifter och få en bekräftelse på din reservation."
+        />
+        <meta
+          name="keywords"
+          content="boka bord, restaurangbokning, online bokning, boka bord Nooris kök & bar, bokning, boka bord snabbt, restaurang, bordreservationssystem, boka bord online, tillgängliga tider"
+        />
+        <link rel="canonical" href="https://nooris.nu/bokabord" />
       </Helmet>
       <HeroBookingSection />
       <BokaBord />

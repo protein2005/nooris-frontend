@@ -45,14 +45,15 @@ const Header = () => {
   }, [isMenuActive]);
 
   return (
-    <header className="header visually-hidden">
+    <header className="header">
       <div className="header__body">
         <div className="header__body-inner container">
           <NavLink to="/" aria-label="Home" className="header__logo logo" title="Home">
             <img src={logo} alt="Logo" width="179" height="50" className="logo__image" />
           </NavLink>
           <div className="header__overlay" ref={overlayRef}>
-            <nav className="header__menu">
+            <h2 className="visually-hidden">Navigering</h2>
+            <nav className="header__menu" role="navigation" aria-label="Main Menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
                   <NavLink

@@ -10,10 +10,13 @@ function Contact() {
         <title>Kontakt | Nooris kök & bar</title>
         <meta
           name="description"
-          content="Kontakta oss för bokningar eller frågor. Vi finns här för att hjälpa dig!"
+          content="Kontakta oss för bokningar, frågor eller support. Vi hjälper dig gärna! Hitta våra kontaktuppgifter och öppettider här."
         />
-        <meta name="keywords" content="kontakt, restaurang, adress, telefon, e-post" />
-        <meta name="language" content="sv" />
+        <meta
+          name="keywords"
+          content="kontakt, restaurang, support, bokning, frågor, telefon, e-post, öppettider, adress"
+        />
+        <link rel="canonical" href="https://nooris.nu/kontakt" />
       </Helmet>
       <ContactSection />
       <SupportSection />

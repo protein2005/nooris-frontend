@@ -116,8 +116,17 @@ function CategoryMenu() {
     <div>
       <Helmet>
         <title>{categoryName} | Nooris kök & bar</title>
-        <meta name="description" content={`Utforska vår ${category} meny.`} />
+        <meta
+          name="description"
+          content={`Utforska vårt utbud av ${categoryName.toLowerCase()}-rätter på Nooris kök & bar. Njut av de bästa rätterna inom ${categoryName} för alla smaker.`}
+        />
+        <meta
+          name="keywords"
+          content={`${categoryName}, ${categoryName.toLowerCase()} meny, ${categoryName} rätter, restaurangmeny, Nooris kök & bar, boka bord, ${categoryName} mat`}
+        />
+        <link rel="canonical" href={`https://nooris.nu/meny/${category}`} />
       </Helmet>
+
       <HeroMenuSection category={categoryName} id={categoryId} />
 
       <div className="menu-list shadow">

@@ -29,15 +29,15 @@ function LinkMenu({ category, id }) {
     ALCOHOL: ALCOHOL,
   };
   return (
-    <div className="link-menu" style={{ backgroundImage: `url(${images[id]})` }}>
+    <article className="link-menu" style={{ backgroundImage: `url(${images[id]})` }}>
       <div className="link-menu__wrapper">
-        <h2 className="link-menu__title">{category.name}</h2>
+        <h1 className="link-menu__title">{category.name}</h1>
         <p className="link-menu__description">{category.description}</p>
         <Link className="hero__button" to={category.url}>
           Se meny
         </Link>
       </div>
-    </div>
+    </article>
   );
 }
 

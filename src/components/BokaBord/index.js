@@ -116,7 +116,7 @@ function BokaBord() {
         </div>
         <div className="bokabord__content">
           {step > 1 && step !== 5 && (
-            <button onClick={handleBack} className="back-button">
+            <button onClick={handleBack} type="button" className="back-button">
               ← Steg tillbaka
             </button>
           )}
@@ -206,7 +206,8 @@ function BokaBord() {
                       <button
                         key={time}
                         className="bokabord__time--item"
-                        onClick={() => handleTimeSelect(time)}>
+                        onClick={() => handleTimeSelect(time)}
+                        type="button">
                         {formattedTime}
                       </button>
                     );

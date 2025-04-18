@@ -9,6 +9,7 @@ const MainLayout = () => {
     <>
       <Header />
       <main className="main">
+        <h1 className="visually-hidden">Nooris Kök & Bar - Luleå</h1>
         <Outlet />
       </main>
       <Footer />

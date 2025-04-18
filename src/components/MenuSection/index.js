@@ -7,13 +7,14 @@ import { useNavigate } from 'react-router-dom';
 function MenuSection() {
   const navigate = useNavigate();
   return (
-    <section class="menu shadow">
-      <div class="menu__wrapper container">
-        <div class="menu__content">
-          <h2 class="menu__title">Vår meny</h2>
-          <p class="menu__subtitle">ETT AXPLOCK</p>
-          <div class="menu__description">
-            <p class="fw-600">
+    <section className="menu shadow">
+      <h1 className="visually-hidden">Nooris Meny</h1>
+      <div className="menu__wrapper container">
+        <div className="menu__content">
+          <h2 className="menu__title">Vår meny</h2>
+          <p className="menu__subtitle">ETT AXPLOCK</p>
+          <div className="menu__description">
+            <p className="fw-600">
               Vår meny har ett helhetsutbud som är anpassat för att alla ska vara nöjda.
             </p>
             <p>
@@ -21,21 +22,21 @@ function MenuSection() {
               bara den bästa maten, utan även en fantastisk service och helhetsupplevelse.
             </p>
           </div>
-          <button onClick={() => navigate('/meny')} type="button" class="hero__button">
+          <button onClick={() => navigate('/meny')} type="button" className="hero__button">
             LÄS HELA MENYN
           </button>
         </div>
-        <div class="menu__images">
+        <div className="menu__images">
           <img
             src={foto1}
-            alt="Panelen Steakhouse Luleå mat"
-            class="menu__image menu__image--1"
+            alt="Nooris Luleå mat"
+            className="menu__image menu__image--1"
             loading="lazy"
           />
           <img
             src={foto2}
-            alt="Panelen Steakhouse Luleå mat"
-            class="menu__image menu__image--2"
+            alt="Nooris Luleå mat"
+            className="menu__image menu__image--2"
             loading="lazy"
           />
         </div>

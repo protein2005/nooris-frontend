@@ -30,9 +30,9 @@ function HeroMenuSection({ category = 'Meny', id = 'MENY' }) {
   };
 
   return (
-    <section class="hero__kontakt" style={{ backgroundImage: `url(${images[id]})` }}>
-      <div class="hero__overlay">
-        <h1 class="kontakt__title">{category}</h1>
+    <section className="hero__kontakt" style={{ backgroundImage: `url(${images[id]})` }}>
+      <div className="hero__overlay">
+        <h1 className="kontakt__title">{category}</h1>
       </div>
     </section>
   );

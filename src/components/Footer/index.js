@@ -6,10 +6,11 @@ import { menuCategories } from '../../utils/menuCategories';
 function Footer() {
   const navigate = useNavigate();
   return (
-    <footer class="footer">
-      <div class="footer__wrapper container">
-        <div class="footer__column">
-          <h2 onClick={() => navigate('/admin')} class="footer__title">
+    <footer className="footer">
+      <h1 className="visually-hidden">Nooris Kök & Bar - Luleå</h1>
+      <div className="footer__wrapper container">
+        <div className="footer__column">
+          <h2 onClick={() => navigate('/admin')} className="footer__title">
             Nooris
           </h2>
           <p>
@@ -21,11 +22,11 @@ function Footer() {
             cocktails – alltså en kombination som är svårslagen.
           </p>
 
-          <img src={logo} alt="Panelen Steakhouse Logo" class="footer__logo" />
+          <img src={logo} alt="Nooris Logo" className="footer__logo" />
         </div>
 
-        <div class="footer__column">
-          <h2 class="footer__title">Öppettider</h2>
+        <div className="footer__column">
+          <h2 className="footer__title">Öppettider</h2>
           <p>
             <strong>Måndag – Lördag</strong>
             <br />
@@ -36,12 +37,12 @@ function Footer() {
             <br />
             stängd
           </p>
-          <p class="footer__note">Köket stänger en timme före stängningstid.</p>
+          <p className="footer__note">Köket stänger en timme före stängningstid.</p>
         </div>
 
-        <div class="footer__column">
-          <h2 class="footer__title">Meny</h2>
-          <ul class="footer__list">
+        <div className="footer__column">
+          <h2 className="footer__title">Meny</h2>
+          <ul className="footer__list">
             {menuCategories.map((category) => (
               <li key={category.id}>
                 <Link to={`${category.url}`}>{category.name}</Link>
@@ -50,15 +51,15 @@ function Footer() {
           </ul>
         </div>
 
-        <div class="footer__column">
-          <h2 class="footer__title">Kontakt</h2>
+        <div className="footer__column">
+          <h2 className="footer__title">Kontakt</h2>
           <p>
             Storgatan 46F
             <br />
             972 31 <strong>Luleå</strong>
           </p>
           <p>
-            <a href="tel:+46920270444" class="footer__phone">
+            <a href="tel:+46920270444" className="footer__phone">
               +46 920 27 04 44
             </a>
           </p>

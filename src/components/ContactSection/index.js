@@ -3,9 +3,9 @@ import MENY from '../../images/menybg.jpg';
 
 function ContactSection() {
   return (
-    <section class="hero__kontakt" style={{ backgroundImage: `url(${MENY})` }}>
-      <div class="hero__overlay">
-        <h1 class="kontakt__title">Kontakt</h1>
+    <section className="hero__kontakt" style={{ backgroundImage: `url(${MENY})` }}>
+      <div className="hero__overlay">
+        <h1 className="kontakt__title">Kontakt</h1>
       </div>
     </section>
   );
