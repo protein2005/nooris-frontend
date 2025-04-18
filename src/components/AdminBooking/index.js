@@ -31,6 +31,8 @@ function AdminBooking() {
       });
   };
 
+  console.log('bookings', bookings);
+
   const handleBackToCalendar = () => {
     setSelectedDate(null);
     setBookings([]);
@@ -71,7 +73,7 @@ function AdminBooking() {
           ) : bookings.length === 0 ? (
             <>
               <p className="no-bookings">Inga bokningar för det valda datumet.</p>
-              <AdminFormBokaBord selectedDate={selectedDate} />
+              <AdminFormBokaBord setBookings={setBookings} selectedDate={selectedDate} />
             </>
           ) : (
             <div>

@@ -224,7 +224,7 @@ function CategoryMenu() {
                               {item.variants.map((v) => v.label || '').join(' / ')}
                             </span>
                             <span className="menu-list__price">
-                              {item.variants.map((v) => `${v.price} kr`).join(' / ')}
+                              {item.variants.map((v) => `${v.price} :-`).join(' / ')}
                             </span>
                           </div>
                         </>

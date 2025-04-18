@@ -14,7 +14,7 @@ import { formatDateToLocalISO } from '../../utils/formatDateToLocal';
 
 function BokaBord() {
   const [step, setStep] = useState(1);
-  const [peopleCount, setPeopleCount] = useState(0);
+  const [peopleCount, setPeopleCount] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [availableTimes, setAvailableTimes] = useState([]);
@@ -99,6 +99,10 @@ function BokaBord() {
 
   const handleBack = () => {
     setStep(step - 1);
+
+    if (step === 2) {
+      setPeopleCount(null);
+    }
   };
 
   return (
@@ -135,12 +139,23 @@ function BokaBord() {
                   </button>
                 ))}
               </div>
-              <p className="bokabord__humans">
-                Om du vill boka för fler än 6 personer, ring numret{' '}
-                <a href="tel:+46920270444" class="footer__phone">
-                  +46 920 27 04 44
-                </a>{' '}
-              </p>
+              <div className="bokabord__humans--content">
+                <p className="bokabord__humans">
+                  Har du fler människor? Ange sedan antalet personer i fältet nedan
+                </p>
+                <input
+                  type="text"
+                  value={peopleCount}
+                  onChange={(e) => setPeopleCount(e.target.value)}
+                  className="humans__input"
+                  placeholder="Antal personer"
+                />
+                {peopleCount > 0 && (
+                  <button onClick={() => setStep(2)} className="back-button" type="button">
+                    Steg 2 &rarr;
+                  </button>
+                )}
+              </div>
             </div>
           )}
 
