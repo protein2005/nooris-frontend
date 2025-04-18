@@ -9,10 +9,10 @@ function MenuSection() {
   const navigate = useNavigate();
   return (
     <section className="menu shadow">
-      <h1 className="visually-hidden">Nooris Meny</h1>
+      <h2 className="visually-hidden">Nooris Meny</h2>
       <div className="menu__wrapper container">
         <div className="menu__content">
-          <h2 className="menu__title">Vår meny</h2>
+          <h3 className="menu__title">Vår meny</h3>
           <p className="menu__subtitle">ETT AXPLOCK</p>
           <div className="menu__description">
             <p className="fw-600">

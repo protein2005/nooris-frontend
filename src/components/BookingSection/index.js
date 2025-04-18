@@ -5,10 +5,10 @@ function BookingSection() {
   const navigate = useNavigate();
   return (
     <section className="booking">
-      <h1 className="visually-hidden">Nooris Boka Bord</h1>
+      <h2 className="visually-hidden">Nooris Boka Bord</h2>
       <div className="booking__overlay">
         <div className="booking__content">
-          <h2 className="booking__title">Vill ni boka bord?</h2>
+          <h3 className="booking__title">Vill ni boka bord?</h3>
           <p className="booking__subtitle">UPPlev VÅR restaurang</p>
           <button
             onClick={() => navigate('/bokabord')}

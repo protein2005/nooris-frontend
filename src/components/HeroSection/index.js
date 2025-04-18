@@ -9,7 +9,7 @@ function HeroSection() {
       <div className="hero__overlay">
         <div className="hero__content">
           <img src={logo} alt="Nooris Luleå logotyp" className="hero__logo" loading="lazy" />
-          <h1 className="hero__title">VÄLKOMMEN TILL NOORIS KÖK & BAR</h1>
+          <h2 className="hero__title">VÄLKOMMEN TILL NOORIS KÖK & BAR</h2>
 
           <p className="hero__subtitle">Boka bord och njut av en fantastisk matupplevelse.</p>
           <button
