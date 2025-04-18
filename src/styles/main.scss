@@ -584,9 +584,15 @@ body {
   }
 
   &__images {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -598,9 +604,13 @@ body {
   &__image {
     margin-right: 10px;
     width: 320px;
+    &--wide {
+      display: grid;
+      row-gap: 20px;
+    }
 
     @include mobile {
-      width: 90%;
+      width: 100%;
       height: auto;
     }
 
@@ -608,7 +618,7 @@ body {
       height: 215px;
 
       @include mobile {
-        width: 90%;
+        width: 100%;
         height: auto;
       }
     }

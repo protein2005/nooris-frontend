@@ -2,6 +2,7 @@ import React from 'react';
 
 import foto1 from '../../images/foto1.webp';
 import foto2 from '../../images/foto2.webp';
+import foto3 from '../../images/foto3.jpg';
 import { useNavigate } from 'react-router-dom';
 
 function MenuSection() {
@@ -33,12 +34,20 @@ function MenuSection() {
             className="menu__image menu__image--1"
             loading="lazy"
           />
-          <img
-            src={foto2}
-            alt="Nooris Luleå mat"
-            className="menu__image menu__image--2"
-            loading="lazy"
-          />
+          <div className="menu__image--wide">
+            <img
+                src={foto2}
+                alt="Nooris Luleå mat"
+                className="menu__image menu__image--2"
+                loading="lazy"
+            />
+            <img
+                src={foto3}
+                alt="Nooris Luleå mat"
+                className="menu__image menu__image--2"
+                loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
