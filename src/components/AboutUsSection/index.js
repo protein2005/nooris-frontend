@@ -1,6 +1,6 @@
 import React from 'react';
 
-import information1 from '../../images/information1.png';
+import information1 from '../../images/information1.jpg';
 import information2 from '../../images/information2.png';
 
 function AboutUsSection() {
