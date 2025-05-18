@@ -30,7 +30,7 @@ function SupportSection() {
               <p>
                 <strong>Söndag</strong>
               </p>
-              <p>11.00 - 21.00</p>
+              <p>Stängd</p>
             </div>
           </div>
           <p className="calendar__note">Köket stänger en timme före stängningstid.</p>
