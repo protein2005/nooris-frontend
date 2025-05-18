@@ -30,12 +30,12 @@ function Footer() {
           <p>
             <strong>Måndag – Lördag</strong>
             <br />
-            11.00-22.00
+            11.00 - 22.00
           </p>
           <p>
             <strong>Söndag</strong>
             <br />
-            stängd
+            11.00 - 21.00
           </p>
           <p className="footer__note">Köket stänger en timme före stängningstid.</p>
         </div>

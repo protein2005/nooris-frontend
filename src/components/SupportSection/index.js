@@ -24,13 +24,13 @@ function SupportSection() {
               <p>
                 <strong>Måndag – Lördag</strong>
               </p>
-              <p>11:00-22:00</p>
+              <p>11:00 - 22:00</p>
             </div>
             <div className="calendar__date">
               <p>
                 <strong>Söndag</strong>
               </p>
-              <p>Stängd</p>
+              <p>11.00 - 21.00</p>
             </div>
           </div>
           <p className="calendar__note">Köket stänger en timme före stängningstid.</p>
