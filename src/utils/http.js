@@ -44,7 +44,7 @@ export async function getCategoriesItem(category) {
   return resData.menuItems;
 }
 
-export async function updateMenuItem(reference, data) {
+export async function updateMenuItem(reference, data, token) {
   const response = await fetch(`${HTTP_PROTOCOL}://${IP}${BACKEND_PORT}/api/v1/admin/menu/${reference}`, {
     method: 'PUT',
     headers: {
