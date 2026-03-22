@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 function BookingSection() {
   const navigate = useNavigate();
+
   return (
     <section className="booking">
       <h2 className="visually-hidden">Nooris Boka Bord</h2>
       <div className="booking__overlay">
         <div className="booking__content">
-          <h3 className="booking__title">Vill ni boka bord?</h3>
-          <p className="booking__subtitle">UPPlev VÅR restaurang</p>
+          <h3 className="booking__title">Planerar ni ett besök?</h3>
+          <p className="booking__subtitle">SÄKRA ERT BORD I GOD TID</p>
           <button
             onClick={() => navigate('/bokabord')}
             className="hero__button"
@@ -17,7 +18,7 @@ function BookingSection() {
             type="button">
             BOKA BORD
           </button>
-          <p className="booking__description">Vi hjälper med er bokning, ring oss på</p>
+          <p className="booking__description">Vill ni boka direkt över telefon når ni oss på</p>
           <address className="booking__address">
             <a href="tel:+46920270444">+46 920 27 04 44</a>
           </address>

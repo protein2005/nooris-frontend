@@ -3,13 +3,13 @@
 .link-menu {
   height: 70vh;
   background: center/cover no-repeat;
-  border: 2px solid #db9423;
+  border: 1px solid rgba(240, 217, 207, 0.18);
   border-radius: 25px;
   transition: all 0.3s ease-in-out;
 
   @include hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgb(219, 148, 35, 0.5);
+    box-shadow: 0 24px 44px rgba(201, 109, 74, 0.28);
   }
 
   &__wrapper {
@@ -26,9 +26,9 @@
 
   &__title {
     color: #fff;
-    font-family: 'Arizonia', Sans-serif;
+    font-family: var(--display-font);
     font-size: 4em;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 30px;
 

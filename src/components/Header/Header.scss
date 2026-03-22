@@ -75,7 +75,7 @@
       position: relative;
 
       @include hover {
-        color: #db9423;
+        color: var(--accent-color);
 
         // &::after {
         //   content: '';
@@ -105,13 +105,13 @@
       }
 
       &.is-active {
-        color: #db9423;
+        color: var(--accent-color);
 
         &::after {
           content: '';
           position: absolute;
           @include square(5px);
-          background-color: #db9423;
+          background-color: var(--accent-color);
           border-radius: 50%;
           left: 10px;
           top: 50%;
@@ -122,7 +122,7 @@
           content: '';
           position: absolute;
           @include square(5px);
-          background-color: #db9423;
+          background-color: var(--accent-color);
           border-radius: 50%;
           right: 10px;
           top: 50%;

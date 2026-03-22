@@ -5,6 +5,7 @@ import { menuCategories } from '../../utils/menuCategories';
 
 function Footer() {
   const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <h1 className="visually-hidden">Nooris Kök & Bar - Luleå</h1>
@@ -14,12 +15,12 @@ function Footer() {
             Nooris
           </h2>
           <p>
-            Nooris är ett självklart val för dig som sätter högt värde på noga utvalda råvaror, god
-            mat och dryck med kött i fokus.
+            Nooris är en restaurang för dig som uppskattar välbalanserade smaker, skön stämning och
+            ett mottagande som känns genuint från första stund.
           </p>
           <p>
-            Precis som i köket kommer vi ha grymma bartenders som har koll på hur man blandar lyxiga
-            cocktails – alltså en kombination som är svårslagen.
+            Oavsett om du kommer för en lugn middag eller något gott i glaset vill vi att helheten
+            ska kännas personlig, avslappnad och minnesvärd.
           </p>
 
           <img src={logo} alt="Nooris Logo" className="footer__logo" />

@@ -4,14 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 function HeroSection() {
   const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero__overlay">
         <div className="hero__content">
           <img src={logo} alt="Nooris Luleå logotyp" className="hero__logo" loading="lazy" />
           <h2 className="hero__title">VÄLKOMMEN TILL NOORIS KÖK & BAR</h2>
-
-          <p className="hero__subtitle">Boka bord och njut av en fantastisk matupplevelse.</p>
+          <p className="hero__subtitle">
+            Smakfulla rätter, levande stämning och en kväll att se fram emot.
+          </p>
           <button
             onClick={() => navigate('/bokabord')}
             className="hero__button"

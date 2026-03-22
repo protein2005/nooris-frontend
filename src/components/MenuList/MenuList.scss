@@ -19,10 +19,10 @@
   }
 
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
+    color: var(--accent-color);
+    font-family: var(--display-font);
     font-size: 4em;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
     letter-spacing: 2px;
     margin-bottom: 30px;

@@ -12,7 +12,7 @@ function Home() {
         <title>Nooris kök & bar - Luleå</title>
         <meta
           name="description"
-          content="Välkommen till Nooris kök & bar i Luleå – en plats där traditionella smaker möter modern matlagning. Utforska vår meny, boka bord enkelt online och upplev en varm och inbjudande atmosfär."
+          content="Nooris kök & bar i Luleå bjuder på smakrika rätter, omtänksam service och en avslappnad miljö. Utforska menyn och boka bord enkelt online."
         />
         <meta
           name="keywords"

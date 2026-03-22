@@ -26,20 +26,20 @@ function AboutUsSection() {
           />
         </div>
         <div className="about-us__content">
-          <h2 className="about-us__title">Om oss.</h2>
-          <p className="about-us__subtitle">Information</p>
+          <h2 className="about-us__title">Om Nooris</h2>
+          <p className="about-us__subtitle">Vår atmosfär</p>
           <div className="about-us__description">
             <p className="fw-600">
-              Välkommen till Nooris kök & bar Luleå, en fantastisk restaurang med steakhouse-koncept
-              och en grym cocktailbar. Restaurangen är belägen på Storgatan 46F, 972 31 Luleå
+              På Nooris kök & bar i Luleå möts välkomnande service, generösa smaker och en miljö där
+              det är lika lätt att stanna länge som att titta in spontant.
             </p>
             <p>
-              Nooris är ett självklart val för dig som sätter högt värde på noga utvalda råvaror,
-              god mat och dryck med kött i fokus.
+              Vi arbetar med råvaror som passar både lunch, middag och kvällshäng, med rätter som
+              känns genomtänkta utan att tappa det avslappnade uttrycket.
             </p>
             <p>
-              Precis som i köket kommer vi ha grymma bartenders som har koll på hur man blandar
-              lyxiga cocktails – alltså en kombination som är svårslagen.
+              I baren och köket ligger fokus på helheten, så att varje besök ska kännas personligt,
+              varmt och värt att komma tillbaka till.
             </p>
           </div>
         </div>

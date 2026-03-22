@@ -2,6 +2,15 @@
 @use './blocks/button';
 @use './blocks/burger-button';
 
+:root {
+  --accent-color: #c96d4a;
+  --accent-strong: #e08a64;
+  --accent-muted: #f0d9cf;
+  --surface-soft: #1b1715;
+  --surface-raised: #231d1a;
+  --display-font: 'Cormorant Garamond', serif;
+}
+
 a,
 button,
 label,
@@ -88,10 +97,10 @@ body {
 .kontakt {
   &__title {
     color: #ffffff;
-    font-family: 'Arizonia', Sans-serif;
+    font-family: var(--display-font);
     font-size: 8em;
-    font-weight: 700;
-    letter-spacing: 12px;
+    font-weight: 600;
+    letter-spacing: 8px;
 
     @include mobile {
       font-size: 4em;
@@ -104,118 +113,151 @@ body {
 }
 
 .support {
-  padding-block: 30px;
+  padding-block: 40px 60px;
 
-  &__icon {
-    @include square(50px);
-    color: #db9423;
+  &__intro {
+    margin-bottom: 24px;
+  }
+
+  &__eyebrow {
+    color: var(--accent-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
   }
 
   &__wrapper {
-    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 
     @include mobile {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 
-  &__map {
+  &__panel,
+  &__map-card {
+    background:
+      radial-gradient(circle at top right, rgba(201, 109, 74, 0.14), transparent 30%),
+      linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(240, 217, 207, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  }
+
+  &__panel {
+    min-height: 320px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__map-card {
     grid-column: 1 / -1;
-  }
-
-  &__kontakt {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 24px;
     padding: 20px;
-    border: 3px solid #db9423;
-  }
 
-  &__calendar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border: 3px solid #db9423;
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__slogan {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
-    font-size: 4em;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: center;
+    color: #ffffff;
+    font-family: var(--display-font);
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
   }
 
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
-    font-size: 4em;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: center;
+    color: #ffffff;
+    font-family: var(--display-font);
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
 
-    @include mobile {
-      margin-bottom: 10px;
-    }
+  &__label {
+    color: var(--accent-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
   }
 
   &__subtitle {
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 8.5px;
-    margin-bottom: 30px;
-
-    @include mobile {
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 24px;
   }
 
   &__phone {
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  &__address {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  &__map-copy {
+    flex: 0 0 34%;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__map-frame {
+    flex: 1;
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 22px;
+
+    iframe {
+      display: block;
+      min-height: 360px;
+    }
   }
 }
 
 .calendar {
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
-    font-size: 4em;
-    font-weight: 700;
-    letter-spacing: 2px;
+    color: #ffffff;
+    font-family: var(--display-font);
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 14px;
   }
   &__subtitle {
-    text-align: center;
-    color: #ffffff;
-    // font-family: 'Poppins', Sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 8.5px;
-    margin-bottom: 30px;
-
-    @include mobile {
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 24px;
   }
 
   &__wrapper {
     display: grid;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 14px;
+    margin-bottom: 16px;
 
     @include laptop {
       flex-direction: column;
@@ -224,7 +266,24 @@ body {
   }
 
   &__date {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__note {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
@@ -247,14 +306,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../images/heroImage.webp') center/cover no-repeat;
+  background: url('../images/heroImage.png') center/cover no-repeat;
 
   &__kontakt {
     position: relative;
     width: 100%;
     height: 60vh;
     background-position: 50% 40%;
-    background: url('../images/heroImage.webp') center/cover no-repeat;
+    background: url('../images/heroImage.png') center/cover no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -332,19 +391,19 @@ body {
 
     font-size: 14px;
     text-transform: uppercase;
-    background-color: #db9423;
+    background-color: var(--accent-color);
     font-weight: 500;
     color: white;
     border-radius: 100px 100px 100px 100px;
     padding: 15px 30px 15px 30px;
-    border: 2px solid #db9423;
+    border: 2px solid var(--accent-color);
     transition: 0.3s ease-in-out;
     cursor: pointer;
 
     @include hover {
       background-color: transparent;
-      color: #db9423;
-      border-color: #db9423;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
     }
   }
 }
@@ -389,10 +448,10 @@ body {
   }
 
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
+    color: var(--accent-color);
+    font-family: var(--display-font);
     font-size: 4em;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
   }
 
@@ -450,7 +509,7 @@ body {
 .booking {
   width: 100%;
   height: 550px;
-  background: url('../images/bookingImage.webp') center/cover no-repeat;
+  background: url('../images/bookingImage.png') center/cover no-repeat;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -473,9 +532,9 @@ body {
 
   &__title {
     color: #ffffff;
-    font-family: 'Arizonia', Sans-serif;
+    font-family: var(--display-font);
     font-size: 120px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -1.3px;
 
     @include mobile {
@@ -533,10 +592,10 @@ body {
   }
 
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
+    color: var(--accent-color);
+    font-family: var(--display-font);
     font-size: 4em;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -658,10 +717,10 @@ body {
   // }
 
   &__title {
-    color: #db9423;
-    font-family: 'Arizonia', Sans-serif;
+    color: var(--accent-color);
+    font-family: var(--display-font);
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   p {
@@ -688,7 +747,7 @@ body {
 
   &__phone,
   &__email {
-    color: #f4a529;
+    color: var(--accent-strong);
     text-decoration: none;
     font-weight: bold;
   }

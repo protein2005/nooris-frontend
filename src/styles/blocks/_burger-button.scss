@@ -12,7 +12,7 @@
   border: none;
 
   @include hover {
-    color: #db9423;
+    color: var(--accent-color);
   }
 
   &.is-active {
