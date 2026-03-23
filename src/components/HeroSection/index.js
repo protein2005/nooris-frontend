@@ -12,7 +12,7 @@ function HeroSection() {
           <img src={logo} alt="Nooris Luleå logotyp" className="hero__logo" loading="lazy" />
           <h2 className="hero__title">VÄLKOMMEN TILL NOORIS KÖK & BAR</h2>
           <p className="hero__subtitle">
-            Smakfulla rätter, levande stämning och en kväll att se fram emot.
+            Smakfulla rätter, levande stämning och en kväll att se fram emot
           </p>
           <button
             onClick={() => navigate('/bokabord')}

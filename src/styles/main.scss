@@ -3,7 +3,7 @@
 @use './blocks/burger-button';
 
 :root {
-  --accent-color: #c96d4a;
+  --accent-color: #d97a56;
   --accent-strong: #e08a64;
   --accent-muted: #f0d9cf;
   --surface-soft: #1b1715;
@@ -394,16 +394,15 @@ body {
     background-color: var(--accent-color);
     font-weight: 500;
     color: white;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 12px;
     padding: 15px 30px 15px 30px;
     border: 2px solid var(--accent-color);
     transition: 0.3s ease-in-out;
     cursor: pointer;
 
     @include hover {
-      background-color: transparent;
-      color: var(--accent-color);
-      border-color: var(--accent-color);
+      opacity: 0.9;
+      background-color: #c8805f;
     }
   }
 }

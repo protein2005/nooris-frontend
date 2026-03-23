@@ -13,7 +13,7 @@ function MenuSection() {
       <h2 className="visually-hidden">Nooris Meny</h2>
       <div className="menu__wrapper container">
         <div className="menu__content">
-          <h3 className="menu__title">Menyutbud</h3>
+          <h3 className="menu__title">Meny</h3>
           <p className="menu__subtitle">NÅGRA FAVORITER</p>
           <div className="menu__description">
             <p className="fw-600">
